@@ -23,13 +23,13 @@ public record TemplateController(
         return "/ssr/posts";
     }
 
-    @GetMapping("/no-ssr")
+    @GetMapping("/csr")
     public String noSSR(Model model) {
-        return "/no-ssr/index";
+        return "/csr/index";
     }
 
-    @GetMapping("/no-ssr/posts")
+    @GetMapping("/csr/posts")
     public String noSSRPosts(Model model) {
-        return "/no-ssr/posts";
+        return "/csr/posts";
     }
 }

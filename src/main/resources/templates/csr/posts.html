@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sample Spring No SSR - posts</title>
+    <title>Sample Spring CSR - posts</title>
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/js/no-ssr-posts.js"></script>
+    <script src="/js/csr-posts.js"></script>
 </head>
 <body>
-<h1>Sample Spring No SSR - posts</h1>
+<h1>Sample Spring CSR - posts</h1>
 <div id="list" class="list">
     <div class="item" th:each="post: ${posts}">
         <img th:src="${post.imageUrl()}" alt=""/>
