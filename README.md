@@ -6,3 +6,6 @@ A simple Spring application demonstrating Server-Side Rendering (SSR). It showca
 ```sh
 docker compose up -d
 ```
+
+### Usage
+[http://localhost](http://localhost)
