@@ -1,0 +1,49 @@
+.list {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.item {
+    display: flex;
+    height: 200px;
+    gap: 0.4rem;
+}
+
+.text {
+    display: grid;
+    gap: 0.4rem;
+}
+
+.art-header {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+}
+
+.art-title {
+    margin: 0;
+    height: fit-content;
+}
+
+.art-content {
+    margin: 0;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+    height: fit-content;
+}
+
+.a-post {
+    display: block;
+    margin: 1rem 0;
+}
+
+.art-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}

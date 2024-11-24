@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Spring SSR</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Sample Spring SSR</h1>
+    <a class="a-post" href="/ssr/posts">posts</a>
+    <div>Users:</div>
+    <div th:each="user: ${users}">
+        <div th:text="${user.username()}"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Spring No SSR - posts</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="/js/no-ssr-posts.js"></script>
+</head>
+<body>
+<h1>Sample Spring No SSR - posts</h1>
+<div id="list" class="list">
+    <div class="item" th:each="post: ${posts}">
+        <img th:src="${post.imageUrl()}" alt=""/>
+        <div class="text">
+            <div class="art-header">
+                <h2 class="art-title" th:text="${post.title()}"></h2>
+                <div>-</div>
+                <div th:text="${post.user().username()}"></div>
+            </div>
+            <p class="art-content" th:text="${post.content()}"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
