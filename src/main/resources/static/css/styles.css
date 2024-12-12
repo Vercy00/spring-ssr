@@ -47,3 +47,14 @@
     display: block;
     flex-shrink: 0;
 }
+
+.user {
+    display: flex;
+    gap: 4px;
+}
+
+.delete {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}

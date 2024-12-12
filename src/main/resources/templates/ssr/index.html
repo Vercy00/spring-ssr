@@ -6,11 +6,25 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <h1>Sample Spring SSR</h1>
-    <a class="a-post" href="/ssr/posts">posts</a>
-    <div>Users:</div>
-    <div th:each="user: ${users}">
-        <div th:text="${user.username()}"></div>
-    </div>
+<h1>Sample Spring SSR</h1>
+<a class="a-post" href="/ssr/posts">posts</a>
+<a class="a-post" href="/ssr/users">Add users</a>
+<div>Users:</div>
+<div class="user" th:each="user: ${users}">
+    <div>Username:</div>
+    <div th:text="${user.username()}"></div>
+    <div>Surname:</div>
+    <div th:text="${user.surname()}"></div>
+    <a th:href="'/ssr/users/' + ${user.id()} + '/edit'">Edit</a>
+    <div class="delete" th:attr="onclick=|handleDeleteUser('${user.id()}')|">Delete</div>
+</div>
+
+<script>
+        async function handleDeleteUser(userId) {
+            await fetch(`/api/users/${userId}`, {
+                method: "DELETE"
+            })
+        }
+</script>
 </body>
 </html>

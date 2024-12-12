@@ -5,6 +5,7 @@ import org.example.springssr.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public record TemplateController(
@@ -15,6 +16,20 @@ public record TemplateController(
     public String showUserList(Model model) {
         model.addAttribute("users", userService.getAllUsers());
         return "/ssr/index";
+    }
+
+    @GetMapping("/ssr/users/{userId}/edit")
+    public String editUser(
+            @PathVariable int userId,
+            Model model
+    ) {
+        model.addAttribute("user", userService.getUser(userId));
+        return "/ssr/user-edit";
+    }
+
+    @GetMapping("/ssr/users")
+    public String addUser(Model model) {
+        return "/ssr/user-add";
     }
 
     @GetMapping("/ssr/posts")

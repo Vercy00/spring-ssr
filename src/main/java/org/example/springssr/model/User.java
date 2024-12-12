@@ -26,6 +26,8 @@ public class User {
 
     private String username;
 
-    @OneToMany
+    private String surname;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Post> posts;
 }

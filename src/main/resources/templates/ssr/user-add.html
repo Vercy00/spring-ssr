@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Spring SSR - edit user</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<h1>Sample Spring SSR - edit user</h1>
+
+<a class="a-post" href="/ssr">ssr</a>
+
+<form id="edit-form">
+    <label for="username">Username</label>
+    <input name="username" id="username" />
+
+    <label for="surname">Surname</label>
+    <input name="surname" id="surname" />
+
+    <button type="submit">submit</button>
+</form>
+
+<script th:inline="javascript">
+    document.getElementById("edit-form").onsubmit = async (e) => {
+        e.preventDefault()
+        const reqObj = {};
+
+        [...e.currentTarget.elements].filter(el => el.tagName === "INPUT").forEach(el => reqObj[el.name] = el.value)
+
+        await fetch(`/api/users`, {
+            method: "POST",
+            headers: new Headers({'content-type': 'application/json'}),
+            body: JSON.stringify(reqObj)
+        })
+    }
+</script>
+
+</body>
+</html>

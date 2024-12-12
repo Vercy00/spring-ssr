@@ -7,6 +7,7 @@ import java.io.Serializable;
 @Builder
 public record UserDto(
         int id,
-        String username
+        String username,
+        String surname
 ) implements Serializable {
 }
